@@ -172,7 +172,7 @@ if hour_df is not None and day_df is not None:
                 
                 with col2:
                     if not hourly_rentals.empty:
-                        st.info("""
+                        st.info(f"""
                         **Insight:**
                         - **Jam puncak**: {peak_hour}:00 dengan rata-rata {hourly_rentals[peak_hour]:.1f} peminjaman
                         - **Jam terendah**: {lowest_hour}:00 dengan rata-rata {hourly_rentals[lowest_hour]:.1f} peminjaman
