@@ -11,23 +11,8 @@ st.set_page_config(
     layout="wide"
 )
 
-# Fungsi untuk memuat data
-@st.cache_data
-def load_data():
-    try:
-        hour_df = pd.read_csv('../data/hour.csv')
-        day_df = pd.read_csv('../data/day.csv')
-        return hour_df, day_df
-    except FileNotFoundError:
-        try:
-            hour_df = pd.read_csv('data/hour.csv')
-            day_df = pd.read_csv('data/day.csv')
-            return hour_df, day_df
-        except FileNotFoundError:
-            st.error("File data tidak ditemukan. Pastikan hour.csv dan day.csv ada di direktori data.")
-            return None, None
-
-hour_df, day_df = load_data()
+hour_df = pd.read_csv('hour.csv')
+day_df = pd.read_csv('day.csv')
 
 if hour_df is not None and day_df is not None:
     # Membersihkan data
